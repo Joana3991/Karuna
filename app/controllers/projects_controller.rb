@@ -35,7 +35,7 @@ class ProjectsController < ApplicationController
 
     authorize @project
     if @project.save
-      redirect_to @project, notice: "Project was successfully created."
+      redirect_to project_path(@project), notice: "Project was successfully created."
     else
       render :new, status: :unprocessable_entity
     end
